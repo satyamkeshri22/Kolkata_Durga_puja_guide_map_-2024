@@ -1,0 +1,1857 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-871Z7XBJDC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-871Z7XBJDC');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="Kolkata, Durga Puja, Guide, Pandals, Festival, 2024, Celebration, Culture, Tradition">
+    <meta name="description" content="Explore the ultimate guide to Kolkata Durga Puja 2024, featuring top pandals, cultural insights, and festive celebrations.">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kolkata Durga Puja Guide 2024</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-10/css/all.min.css">
+
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow: auto;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 29px;
+            cursor: pointer;
+            color: #6b0303;
+            background: #00000030;
+            transition: color 0.3s;
+            border: 1px solid;
+            padding: 2px 7px;
+        }
+
+        .close:hover {
+            color: #333;
+        }
+
+        iframe {
+            width: 100%;
+            height: 60vh;
+            border: none;
+        }
+
+        :root {
+            --primary-color: #D32F2F;
+            --secondary-color: #FFC107;
+            --accent-color: #4CAF50;
+            --text-color: #333333;
+            --background-color: #FFF3E0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-color);
+            padding: 20px 10px;
+            margin: 0;
+            font-size: 28px;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #pandal-list,
+        #feed-container {
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* pandal start */
+
+        .pandal-card {
+            background: #fff7e6;
+            /* Light yellow background for festive feel */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            /* Added margin for better spacing */
+            padding: 10px;
+            /* Less padding for mobile */
+            border: 2px solid #ffcc00;
+            /* Gold border */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pandal-content {
+            padding: 10px;
+        }
+
+        .pandal-name {
+            font-size: 20px;
+            /* Adjusted for mobile */
+            margin-bottom: 8px;
+            color: var(--primary-color);
+            /* Deep red for pandal name */
+            font-weight: bold;
+        }
+
+        .pandal-location,
+        .pandal-region,
+        .pandal-description {
+            margin-bottom: 8px;
+            color: #5d4037;
+            /* Earthy brown tone */
+            font-size: 14px;
+            /* Smaller text for mobile */
+        }
+
+        .pandal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f9e4b7;
+            /* Light festive gold */
+            border-top: 2px solid #ffcc00;
+            /* Gold border */
+        }
+
+        /* pandal end */
+
+        .map-icon:hover {
+            color: #a81d07;
+            /* Darker red on hover */
+        }
+
+        #map-container {
+            height: 400px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .map-icon {
+            cursor: pointer;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .map-icon .material-icons {
+            margin-right: 5px;
+        }
+
+        .add-photo-btn {
+            background-color: #ffcc00;
+            /* Bright gold button */
+            display: none;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            /* Smaller padding for mobile */
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: none;
+            align-items: center;
+        }
+
+        .add-photo-btn:hover {
+            background-color: #e6b800;
+            /* Darker gold on hover */
+        }
+
+        .add-photo-btn .material-icons {
+            margin-right: 5px;
+        }
+
+        /* upload form start */
+
+        .upload-form {
+            display: none;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-top: 1px solid #eee;
+        }
+
+        .input-group {
+            margin-bottom: 10px;
+        }
+
+        .input-group input[type="text"],
+        .input-group input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            font-size: 15px;
+        }
+
+        .input-group-append {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn-info {
+            background-color: #4285F4;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-info:hover {
+            background-color: #3367D6;
+        }
+
+        /* upload form end */
+
+        /* Carousel styling */
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            height: 220px;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid #ffcc00;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 8px;
+            left: 10px;
+            background: rgba(194, 24, 7, 0.8);
+            color: white;
+            padding: 5px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .carousel-nav {
+            visibility: visible;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 8px;
+            font-size: 12px;
+            border-radius: 20%;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .carousel-nav[style*="display: none"] {
+            visibility: hidden;
+        }
+
+        .carousel-nav:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .carousel-prev {
+            left: 10px;
+        }
+
+        .carousel-next {
+            right: 10px;
+        }
+
+        /* Navigation styles */
+
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            background-color: var(--primary-color);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-button {
+            background-color: transparent;
+            border: none;
+            color: white;
+            padding: 10px 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: border-bottom 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-button:hover {
+            border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .nav-button.active {
+            border-bottom: 2px solid white;
+        }
+
+        /* Feed start */
+
+        .feed-item {
+            background-color: white;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .feed-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .post-name {
+            font-size: 18px;
+            margin: 0;
+            color: #333;
+        }
+
+        .post-title {
+            font-size: 16px;
+            margin: 5px 0;
+            color: #555;
+        }
+
+        .feed-image {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .feed-item-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .icon-favorite {
+            color: red;
+            /* Color for liked icon */
+        }
+
+        .icon-favorite-border {
+            color: white;
+            /* Color for unliked icon */
+        }
+
+        .like-button,
+        .comment-button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .like-button:hover,
+        .comment-button:hover {
+            color: #3367D6;
+        }
+
+        .comment-section {
+            padding: 20px;
+            background-color: #ffefdb;
+            /* Light festive background */
+            border-top: 1px solid #eee;
+            border-radius: 8px;
+        }
+
+        .comment {
+            background-color: #fff9f0;
+            /* Light festive comment background */
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .comment-text {
+            color: #333;
+        }
+
+        .add-comment {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .add-comment input {
+            flex-grow: 1;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .add-comment button {
+            background-color: #f44242;
+            /* Button color */
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-comment button:hover {
+            background-color: #3367D6;
+        }
+
+        /* Specific styles for delete button in comments */
+
+        .delete-comment,
+        .delete-post {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: red;
+            /* Color for delete button */
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+        .delete-post {
+            font-size: 20px;
+        }
+
+        /* feed end */
+
+        /* New styles for the map container */
+
+        .map-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .map-container iframe {
+                height: 300px;
+            }
+        }
+
+        /* Adjust the nav-bar to ensure it's below the map */
+
+        .nav-bar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* search & filter start */
+
+        .search-filter-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffcc80;
+            /* Light gold festive background */
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            /* Slightly larger shadow for depth */
+            margin-bottom: 20px;
+        }
+
+        .search-bar {
+            flex: 2;
+            /* Take up more space for search bar */
+            margin-right: 15px;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px 40px 10px 15px;
+            font-size: 16px;
+            border: 2px solid #ffcc00;
+            /* Gold border */
+            border-radius: 8px;
+            /* Softer, rounder corners */
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fffde7;
+            /* Light yellow background */
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: #c21807;
+            /* Deep red border on focus */
+            box-shadow: 0 0 8px rgba(194, 24, 7, 0.3);
+            /* Red glow on focus */
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #c21807;
+            /* Festive red for the search icon */
+            font-size: 24px;
+        }
+
+        .region-filter {
+            flex: 1;
+            /* Less space for the filter */
+            position: relative;
+        }
+
+        .region-filter select {
+            width: 100%;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 2px solid #ffcc00;
+            /* Gold border */
+            border-radius: 8px;
+            /* Softer, rounder corners */
+            background-color: #fffde7;
+            /* Light yellow background */
+            cursor: pointer;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+            background-repeat: no-repeat;
+            background-position-x: 95%;
+            background-position-y: 50%;
+            padding-right: 40px;
+        }
+
+        .region-filter select:focus {
+            outline: none;
+            border-color: #c21807;
+            /* Deep red border on focus */
+            box-shadow: 0 0 8px rgba(194, 24, 7, 0.3);
+            /* Red glow on focus */
+        }
+
+        /* search and filter end */
+
+        .pandal-card {
+            display: none;
+            /* Hide all cards by default */
+        }
+
+        .pandal-card.visible {
+            display: block;
+            /* Show only visible cards */
+        }
+
+        .tip-card {
+            margin-left: auto;
+            margin-right: auto;
+            background: #fff7e6;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 2px solid #ffcc00;
+        }
+
+        /* Card header */
+
+        .tip-circuit {
+            /*  background-color: #3498db;*/
+            color: #000000;
+            padding: 10px 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Card content */
+
+        .tip-text {
+            padding: 15px;
+            font-size: 16px;
+        }
+
+        /* Puja list */
+
+        .tip-pujas {
+            padding: 10px 15px 10px 40px;
+            position: relative;
+            background-color: #f9e4b7;
+            border-top: 2px solid #ffcc00;
+        }
+
+        .tip-pujas::before {
+            content: '';
+            position: absolute;
+            left: 19px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #eabb00;
+        }
+
+        .tip-pujas-text {
+            padding: 5px 0 5px 20px;
+            position: relative;
+        }
+
+        .tip-pujas-text::before {
+            content: '';
+            position: absolute;
+            left: -27px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #eabb00;
+            border: 2px solid #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Kolkata Durga Puja Guide 2024</h1>
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <iframe id="map-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div id="map-container">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1KGzrrj3ooImHf7UJkMhiY3jkwxsf7iU&ehbc=2E312F&noprof=1" height="400px" width="100%" style="height: 400px"></iframe>
+    </div>
+
+    <div class="nav-bar">
+        <button class="nav-button " onclick="showView('home-container')" style='display:none'>Home</button>
+        <button class="nav-button active" onclick="showView('pandal-list')">Pandals </button>
+        <button class="nav-button" onclick="showView('feed-container')" style='display:none'>Feed</button>
+        <button class="nav-button" onclick="showView('tip-container')">Tips</button>
+    </div>
+
+    <div id="home-container" style="display: none;">
+        <!-- Feed items will be dynamically added here -->
+    </div>
+
+    <div id="pandal-list">
+        <div class="search-filter-container">
+            <div class="search-bar">
+                <span class="material-icons search-icon">search</span>
+                <input type="text" id="pandal-search" style="padding-left:40px;" placeholder="Search pandals..." onkeyup="filterPandals()">
+            </div>
+            <div class="region-filter">
+                <select id="region-select" onchange="filterPandals()">
+                    <option value="all">All Regions</option>
+                    <option value="top">Top Puja</option>
+                    <option value="North Kolkata">North Kolkata</option>
+                    <option value="South Kolkata">South Kolkata</option>
+                    <option value="Central Kolkata">Central Kolkata</option>
+                    <option value="Salt Lake/New Town">Salt Lake/New Town</option>
+                </select>
+            </div>
+        </div>
+        <!-- Pandal cards will be dynamically added here -->
+    </div>
+
+    <div id="feed-container" style="display: none;">
+        <!-- Feed items will be dynamically added here -->
+    </div>
+
+    <div id="tip-container" style="display: none;padding: 12px;">
+        <!-- Feed items will be dynamically added here -->
+        <div class="tip-card">
+            <div class="tip-circuit">Dum Dum Circuit (North Kol)</div>
+            <div class="tip-text">Drop at Jessore Road Dum Dum Park Signal and cover the below three Pujas</div>
+            <div class="tip-pujas">
+                <div class="tip-pujas-text">Tarun Dal</div>
+                <div class="tip-pujas-text">Tarun Sangha</div>
+                <div class="tip-pujas-text">Bharat Chakra</div>
+            </div>
+        </div>
+        <div class="tip-card">
+            <div class="tip-circuit">8 No. Tank (Salt Lake)</div>
+            <div class="tip-text">Drop near 8 No. Tank and cover the below two Pujas</div>
+            <div class="tip-pujas">
+                <div class="tip-pujas-text">AK Block</div>
+                <div class="tip-pujas-text">BJ block</div>
+            </div>
+        </div>
+        <div class="tip-card">
+            <div class="tip-circuit">College Square Circuit (Central Kol)</div>
+            <div class="tip-text">Drop near MG Road Metro and cover the below three Pujas</div>
+            <div class="tip-pujas">
+                <div class="tip-pujas-text">Md Ali Park</div>
+                <div class="tip-pujas-text">College Square</div>
+                <div class="tip-pujas-text">Santosh Mitra Square</div>
+            </div>
+        </div>
+        <div class="tip-card">
+            <div class="tip-circuit">Kumartuli Circuit (Central Kol)</div>
+            <div class="tip-text">Drop near Ahiritola and cover the below four Pujas</div>
+            <div class="tip-pujas">
+                <div class="tip-pujas-text">Ahiritola</div>
+                <div class="tip-pujas-text">Kumartuli</div>
+                <div class="tip-pujas-text">Jagat Mukherjee</div>
+                <div class="tip-pujas-text">Baghbazar</div>
+            </div>
+        </div>
+        <div class="tip-card">
+            <div class="tip-circuit">Hatibagan Circuit (Central Kol)</div>
+            <div class="tip-text">Drop near Hatibagan and cover the below two Pujas</div>
+            <div class="tip-pujas">
+                <div class="tip-pujas-text">Hatibagan</div>
+                <div class="tip-pujas-text">Kashi Bose Lane</div>
+            </div>
+        </div>
+        <div class="tip-card">
+            <div class="tip-circuit">Manicktala Circuit (Central Kol)</div>
+            <div class="tip-text">Drop near Manicktala and cover the below two Pujas</div>
+            <div class="tip-pujas">
+                <div class="tip-pujas-text">Chaltabagan</div>
+                <div class="tip-pujas-text">Lalabagan</div>
+            </div>
+        </div>
+        <div class="tip-card">
+            <div class="tip-circuit">Deshpriya Park Circuit (South Kol)</div>
+            <div class="tip-text">Drop at Deshpriya Park and cover the below four Pujas</div>
+            <div class="tip-pujas">
+                <div class="tip-pujas-text">Deshpriya Park</div>
+                <div class="tip-pujas-text">Tridhara</div>
+                <div class="tip-pujas-text">Ballygunge Cultural</div>
+                <div class="tip-pujas-text">Samaj Sebi Sangha</div>
+            </div>
+        </div>
+        <div class="tip-card">
+            <div class="tip-circuit">Gariahat Circuit (South Kol)</div>
+            <div class="tip-text">Drop at Gariahat Crossing and cover the below two Pujas</div>
+            <div class="tip-pujas">
+                <div class="tip-pujas-text">Ekdalia Evergreen Club</div>
+                <div class="tip-pujas-text">Singhi Park</div>
+            </div>
+        </div>
+        <div class="tip-card">
+            <div class="tip-circuit">Jatin Das Park Circut (South Kol)</div>
+            <div class="tip-text">Drop at Jatin Das Park Metro and cover the below four Pujas</div>
+            <div class="tip-pujas">
+                <div class="tip-pujas-text">Hazra Park</div>
+                <div class="tip-pujas-text">Bakul Bagan</div>
+                <div class="tip-pujas-text">Abasar Sarbojanin</div>
+                <div class="tip-pujas-text">Maddox Square</div>
+            </div>
+        </div>
+        <div class="tip-card">
+            <div class="tip-circuit">Kalighat Circut (South Kol)</div>
+            <div class="tip-text">Drop near Kalighat Metro and cover the below two Pujas</div>
+            <div class="tip-pujas">
+                <div class="tip-pujas-text">Badamtala</div>
+                <div class="tip-pujas-text">66 Pally</div>
+            </div>
+        </div>
+        <div class="tip-card">
+            <div class="tip-circuit">Behala Circut (South Kol)</div>
+            <div class="tip-text">Drop near 14 No Bus Stand and cover the below two Pujas</div>
+            <div class="tip-pujas">
+                <div class="tip-pujas-text">Behala Friends Club</div>
+                <div class="tip-pujas-text">Behala Notun Sangha</div>
+            </div>
+        </div>
+        <div class="tip-card">
+            <div class="tip-circuit">Kasba Circut (South Kol)</div>
+            <div class="tip-text">Drop near Kasba Bosepukur and cover the below two Pujas</div>
+            <div class="tip-pujas">
+                <div class="tip-pujas-text">Bosepukur Sitala Mandir</div>
+                <div class="tip-pujas-text">Rajdanga Naba Uday Sangha</div>
+            </div>
+        </div>
+    </div>
+
+ <!-- Java script -->
+    <script>
+        let allPandals = []; // Store all pandals for filtering
+        var pandals = [{
+            "pandalid": "1",
+            "name": "Tridhara Sammilani Durga Puja Pandal",
+            "location": "Near Deshapriya Park, Kolkata 700025",
+            "description": "Artistic Natural Theme",
+            "region": "South Kolkata",
+            "baseimage": "tridhara.PNG",
+            "latitude": "22.5195511",
+            "longitude": "88.3553915",
+            "top": "1",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3685.590134049947!2d88.35281657480988!3d22.519556034913396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02772daca1f653%3A0xdbf590e266b01219!2sTridhara%20Sammilani%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728399649937!5m2!1sen!2sin"
+        }, {
+            "pandalid": "2",
+            "name": "Sree Bhumi Sporting Club",
+            "location": "Sreebhumi, Lake Town",
+            "description": "Tirupati Balaji Mandir",
+            "region": "North Kolkata",
+            "baseimage": "sreebhumi.PNG",
+            "latitude": "22.5988987",
+            "longitude": "88.4003579",
+            "top": "1",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3683.4705085160317!2d88.4029328!3d22.598898700000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275e2c12d7261%3A0x331d78641a3c7653!2sSree%20Bhumi%20Sporting%20Club%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728414230490!5m2!1sen!2sin"
+        }, {
+            "pandalid": "3",
+            "name": "Ekdalia Evergreen Club Durga Puja Pandal",
+            "location": "Ekdalia, Ballygunge",
+            "description": "Puri Jagannath Temple",
+            "region": "South Kolkata",
+            "baseimage": "ekdalia.JPG",
+            "latitude": "22.5212187",
+            "longitude": "88.3665629",
+            "top": "1",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7371.17325570401!2d88.36127358400645!3d22.519687499078895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0276d417b26201%3A0x220c3a4dbd7f651a!2sEkdalia%20Evergreen%20Club%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728414334182!5m2!1sen!2sin"
+        }, {
+            "pandalid": "4",
+            "name": "66 Pally Durga Puja",
+            "location": "Nepal Bhattacharjee St,Kalighat",
+            "description": "Indian Spices",
+            "region": "South Kolkata",
+            "baseimage": "66pally.JPG",
+            "latitude": "22.5181517",
+            "longitude": "88.342716",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7587.299531621772!2d88.33983766805855!3d22.51723827365259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027700409e6a73%3A0xff939e8ca11f264d!2s66%20Pally%20Durga%20Puja!5e0!3m2!1sen!2sin!4v1728414407729!5m2!1sen!2sin"
+        }, {
+            "pandalid": "5",
+            "name": "95 Pally Association Durga Puja Pandal",
+            "location": "Rahim Ostagar Rd, Jodhpur Park",
+            "description": "Crystal Cave",
+            "region": "South Kolkata",
+            "baseimage": "95pally.JPG",
+            "latitude": "22.508235",
+            "longitude": "88.3627602",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7371.783994914879!2d88.36018527943516!3d22.508235000000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027129d8c8c381%3A0xe59f767b26bfbefa!2s95%20Pally%20Association%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728415689777!5m2!1sen!2sin"
+        }, {
+            "pandalid": "6",
+            "name": "Abasar Sarbojanin Durga Puja Pandal",
+            "location": "Bakul Bagan, Bhowanipore",
+            "description": "Mohalla tradition of Rajasthan",
+            "region": "South Kolkata",
+            "baseimage": "abasar.JPG",
+            "latitude": "22.5276806",
+            "longitude": "88.3491236",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3685.365216073084!2d88.34784686850894!3d22.52798781484554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027730a69753d9%3A0x2eb56bd46c704ba6!2sAbasar%20Sarbojanin%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728415722110!5m2!1sen!2sin"
+        }, {
+            "pandalid": "7",
+            "name": "Ahiritola Sarbojanin Durga Puja Pandal",
+            "location": "BK Paul Ave, Ahiritola, Beniatola",
+            "description": "Heritage of North Kolkata",
+            "region": "Central Kolkata",
+            "baseimage": "ahiritola.JPG",
+            "latitude": "22.5949481",
+            "longitude": "88.3571972",
+            "top": "1",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3683.5798672766473!2d88.3572116!3d22.594811599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277cebc514549%3A0xc11c0f079b1a54cf!2sAhiritola%20Udyan!5e0!3m2!1sen!2sin!4v1728415747324!5m2!1sen!2sin"
+        }, {
+            "pandalid": "9",
+            "name": "Baghbazar Sarbojonin Durga Puja Pandal",
+            "location": "Sovabazar, Baghbazar",
+            "description": "Jaipur Hawa Mahal ",
+            "region": "Central Kolkata",
+            "baseimage": "bagbazar.PNG",
+            "latitude": "22.6046649",
+            "longitude": "88.3659778",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7366.605605411789!2d88.36265185724083!3d22.605165062652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02762db2c7e01f%3A0xa953c72eb79fcf18!2sBaghbazar%20Sarbojonin%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728415990652!5m2!1sen!2sin"
+        }, {
+            "pandalid": "10",
+            "name": "Bakul Bagan Sarbojanin Durgotsav",
+            "location": "Rajshekhar Bose Sarani, Bakul Bagan, Bhowanipore",
+            "description": "Tribal Art called Mashan",
+            "region": "South Kolkata",
+            "baseimage": "bakul.JPG",
+            "latitude": "22.5267621",
+            "longitude": "88.34826",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3685.393157993154!2d88.34675796295163!3d22.526940484082854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277374a1ee63d%3A0xdd54c54430847f8e!2sBakul%20Bagan%20Sarbojanin%20Durgotsav!5e0!3m2!1sen!2sin!4v1728416008669!5m2!1sen!2sin"
+        }, {
+            "pandalid": "11",
+            "name": "Ballygunge Cultural Association Durga Puja Pandal",
+            "location": "Lake Terrace, Ballygunge",
+            "description": "Arshinagar - City of Mirrors",
+            "region": "South Kolkata",
+            "baseimage": "ballygungecultural.JPG",
+            "latitude": "22.5160658",
+            "longitude": "88.3555583999999",
+            "top": "1",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3685.69028020517!2d88.35359938732942!3d22.51580076836202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0270d32a98b68d%3A0x871af557cf56660e!2sBallygunge%20Cultural%20Association%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728399743971!5m2!1sen!2sin"
+        }, {
+            "pandalid": "12",
+            "name": "Barisha Club Community Durga Puja Pandal",
+            "location": "Sakher Bazar, Purba Barisha",
+            "description": "Home and habitation, Family and Culture",
+            "region": "South Kolkata",
+            "baseimage": "barisha.JPG",
+            "latitude": "22.4812859",
+            "longitude": "88.3132412",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7373.219975317027!2d88.31066627943517!3d22.48128589999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027a6fe9697123%3A0xe1530cae4fe5b431!2sBarisha%20Club%20Community%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728416037345!5m2!1sen!2sin"
+        }, {
+            "pandalid": "14",
+            "name": "Behala Friends Club",
+            "location": "Behala Tram Depot Exit, Diamond Harbour Rd",
+            "description": "Women Empowerment",
+            "region": "South Kolkata",
+            "baseimage": "behalafriends.JPG",
+            "latitude": "22.5012288999999",
+            "longitude": "88.3203865999999",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7372.1574712232905!2d88.31781167943518!3d22.501228899999987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027a0ef9bcd14d%3A0x73e8aabbc63c45a2!2sBehala%20Friends%20Club!5e0!3m2!1sen!2sin!4v1728416107156!5m2!1sen!2sin"
+        }, {
+            "pandalid": "15",
+            "name": "Behala Nutan Dal Durga Puja Pandal",
+            "location": "Auddy Bagan Basti, Behala",
+            "description": "Imagination ",
+            "region": "South Kolkata",
+            "baseimage": "behalanotun.JPG",
+            "latitude": "22.500436",
+            "longitude": "88.3200105",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7372.1997316419265!2d88.31743557943517!3d22.500436000000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027a091884e2f5%3A0xeda7dc93f955e9f4!2sBehala%20Nutan%20Dal%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728416135029!5m2!1sen!2sin"
+        }, {
+            "pandalid": "16",
+            "name": "Beliaghata 33 Pally Durga Puja Pandal",
+            "location": "Subhas Sarobar Park, Phool Bagan, Beleghata",
+            "description": "Kohinoor",
+            "region": "Central Kolkata",
+            "baseimage": "beliaghata33.JPG",
+            "latitude": "22.5687867",
+            "longitude": "88.3914126999999",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7368.551554549018!2d88.38883777943516!3d22.56878669999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02766342a680d1%3A0x85941959b99cb463!2sBeliaghata%2033%20Pally%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728416146621!5m2!1sen!2sin"
+        }, {
+            "pandalid": "17",
+            "name": "Bhowanipur 75 Palli Durga Puja Pandal",
+            "location": "Debendra Ghosh Rd, Bhowanipore",
+            "description": "Yet, My Heart is with You",
+            "region": "South Kolkata",
+            "baseimage": "Bhowanipur-75-Pall.jpg",
+            "latitude": "22.533319",
+            "longitude": "88.3457086",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7370.445930734623!2d88.34313367943517!3d22.53331900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027738d78d4fbd%3A0x4d0b78b9bd98a1fd!2sBhowanipur%2075%20Palli%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728416515276!5m2!1sen!2sin"
+        }, {
+            "pandalid": "18",
+            "name": "BJ Block Saradotsav Durga Puja Pandal",
+            "location": "BJ Block, Sector II",
+            "description": "Bodh Gaya - Gautam Buddh ji",
+            "region": "Salt Lake\/New Town",
+            "baseimage": "bjblock.JPG",
+            "latitude": "22.5906892",
+            "longitude": "88.4265676",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3683.69015157408!2d88.4265676!3d22.590689199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027596638c2201%3A0x51da11257e8a8d1e!2sBJ%20Block%20Saradotsav%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728415788082!5m2!1sen!2sin"
+        }, {
+            "pandalid": "19",
+            "name": "Bosepukur Sitala Mandir Durga Puja Pandal",
+            "location": "Tal Bagan, Bosepukur, Kasba",
+            "description": "Shanchoy: Pottery Items",
+            "region": "South Kolkata",
+            "baseimage": "bosepukur.jpg",
+            "latitude": "22.5192181",
+            "longitude": "88.3848575999999",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7371.198293620191!2d88.38228267943516!3d22.5192181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0276b4fd6fec85%3A0xb383d0cf7fdb6bc8!2sBosepukur%20Sitala%20Mandir%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728416050013!5m2!1sen!2sin"
+        }, {
+            "pandalid": "20",
+            "name": "Chakraberia Sarbojanin Durga Puja Pandal",
+            "location": "Paddapukur, Bhowanipore",
+            "description": "Speechless",
+            "region": "South Kolkata",
+            "baseimage": "chakraberia.JPG",
+            "latitude": "22.5336065",
+            "longitude": "88.3519214",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7370.430586337257!2d88.34934647943516!3d22.533606499999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02773bbf310017%3A0xf6d48ad98db4016a!2sChakraberia%20Sarbojanin%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728416551139!5m2!1sen!2sin"
+        }, {
+            "pandalid": "21",
+            "name": "Chetla Agrani Club",
+            "location": "Peary Mohan Roy Rd, Chetla",
+            "description": "Ghats of Benaras",
+            "region": "South Kolkata",
+            "baseimage": "chetla.JPG",
+            "latitude": "22.5163996999999",
+            "longitude": "88.3368366",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7371.348617689441!2d88.33426167943514!3d22.516399699999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02774cc933a0cf%3A0xf16ff342ace01457!2sChetla%20Agrani%20Club!5e0!3m2!1sen!2sin!4v1728416560882!5m2!1sen!2sin"
+        }, {
+            "pandalid": "22",
+            "name": "Dakshindari Playground And Dakshindari Youth Forum",
+            "location": "Dakshindari, South Dumdum",
+            "description": "Singhabahini - Film maker Tapan Singha",
+            "region": "North Kolkata",
+            "baseimage": "dakshindari.JPG",
+            "latitude": "22.595387",
+            "longitude": "88.3938486",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7367.128944801374!2d88.39127367943517!3d22.595386999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02760e67a24671%3A0x5dfbe508a0d48293!2sDakshindari%20Playground%20And%20Dakshindari%20Youth%20Forum!5e0!3m2!1sen!2sin!4v1728416570002!5m2!1sen!2sin"
+        }, {
+            "pandalid": "23",
+            "name": "Deshapriya Park Durga Puja Pandal",
+            "location": "Manoharpukur, Kalighat",
+            "description": "Bhuboneswari",
+            "region": "South Kolkata",
+            "baseimage": "deshpriya.JPG",
+            "latitude": "22.5189918",
+            "longitude": "88.3534459999999",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7371.210364367065!2d88.35087107943517!3d22.518991799999988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027731a9a30c5d%3A0x799c6348d9403f4a!2sDeshapriya%20Park%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728416577674!5m2!1sen!2sin"
+        }, {
+            "pandalid": "24",
+            "name": "Dum Dum Park Bharat Chakra",
+            "location": "South Dumdum",
+            "description": "Jamdani work culture of Bengal",
+            "region": "North Kolkata",
+            "baseimage": "bharatchakra.PNG",
+            "latitude": "22.61026",
+            "longitude": "88.4143505",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7366.3328302360815!2d88.41177557943517!3d22.610260000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275f638219271%3A0x3974eb6bb6cbe800!2sDum%20Dum%20Park%20Bharat%20Chakra!5e0!3m2!1sen!2sin!4v1728416586839!5m2!1sen!2sin"
+        }, {
+            "pandalid": "25",
+            "name": "Dum Dum Park Tarun Dal",
+            "location": "South Dumdum",
+            "description": "Blue Rebellion",
+            "region": "North Kolkata",
+            "baseimage": "tarundal.PNG",
+            "latitude": "22.6114857",
+            "longitude": "88.4186138",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7366.2671994351895!2d88.41603887943518!3d22.6114857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275f59de26db9%3A0x364e453a8f73de39!2sDum%20Dum%20Park%20Tarun%20Dal!5e0!3m2!1sen!2sin!4v1728416593721!5m2!1sen!2sin"
+        }, {
+            "pandalid": "26",
+            "name": "Dum Dum Park Tarun Sangha Durga Puja Pandal",
+            "location": "South Dumdum",
+            "description": "Muktodhara - Play of Tagore",
+            "region": "North Kolkata",
+            "baseimage": "tarunsangha.JPG",
+            "latitude": "22.6100944",
+            "longitude": "88.4116605",
+            "top": "1",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7366.341697123401!2d88.40908557943517!3d22.610094399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275f789123901%3A0x5dc60430b7ee55a9!2sDum%20Dum%20Park%20Tarun%20Sangha%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728416602175!5m2!1sen!2sin"
+        }, {
+            "pandalid": "27",
+            "name": "FD Block Durga Puja Pandal",
+            "location": "FD Block, Sector 3",
+            "description": "From source to infinity",
+            "region": "Salt Lake\/New Town",
+            "baseimage": "fd.JPG",
+            "latitude": "22.5833909",
+            "longitude": "88.4124515",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7367.77070442016!2d88.40987657943518!3d22.583390899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275c3404659e5%3A0x8d261205d2f696ad!2sFD%20Block%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728416883650!5m2!1sen!2sin"
+        }, {
+            "pandalid": "28",
+            "name": "Gauri Bari Sarbojanin Durga Puja Pandal",
+            "location": "Gouri Bari Ln, Manicktala",
+            "description": "Terracotta",
+            "region": "Central Kolkata",
+            "baseimage": "gauribari.JPG",
+            "latitude": "22.5945086",
+            "longitude": "88.3791679",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7367.17594783621!2d88.37659297943519!3d22.594508599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02763c2ff55cf3%3A0x3b115d3e0b47dc81!2sGauri%20Bari%20Sarbojanin%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728416898872!5m2!1sen!2sin"
+        }, {
+            "pandalid": "29",
+            "name": "Hatibagan Sarbojanin Durga Puja Pandal",
+            "location": "Sovabazar, Hati Bagan",
+            "description": "Prokoron or Process Draftsman",
+            "region": "Central Kolkata",
+            "baseimage": "hatibagan.JPG",
+            "latitude": "22.5943863",
+            "longitude": "88.3720004",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7367.1824919511155!2d88.36942547943518!3d22.594386300000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027630b1e30443%3A0x78837359e84d7bc7!2sHatibagan%20Sarbojanin%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728416906515!5m2!1sen!2sin"
+        }, {
+            "pandalid": "30",
+            "name": "Hazra Park Durga Puja Pandal",
+            "location": "Hazra Rd, Jatin Das Park",
+            "description": "Social justice",
+            "region": "South Kolkata",
+            "baseimage": "hazra.JPG",
+            "latitude": "22.524434",
+            "longitude": "88.3460535",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7370.920047838258!2d88.34347857943519!3d22.524434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277462c52433f%3A0x370b5ca4df318b2a!2sHazra%20Park%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728416913884!5m2!1sen!2sin"
+        }, {
+            "pandalid": "32",
+            "name": "Jagat Mukherjee Park",
+            "location": "Jatindra Mohan Ave, Sovabazar",
+            "description": "Underwater Metro Rail",
+            "region": "Central Kolkata",
+            "baseimage": "jagat.JPG",
+            "latitude": "22.5994903",
+            "longitude": "88.3660388",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7366.957888459306!2d88.36538434102307!3d22.598583454303686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02763275b71687%3A0xd927b406f878b566!2sJagat%20Mukherjee%20Park!5e0!3m2!1sen!2sin!4v1728416928200!5m2!1sen!2sin"
+        }, {
+            "pandalid": "33",
+            "name": "Jodhpur Park Durga Puja Pandal",
+            "location": "1\/D, Jodhpur Park",
+            "description": "Struggle of Kolkata slums",
+            "region": "South Kolkata",
+            "baseimage": "jodhpurpark.PNG",
+            "latitude": "22.5044924",
+            "longitude": "88.3655249",
+            "top": "1",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7371.983516548004!2d88.36294997943516!3d22.504492400000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02712883ec2d13%3A0xb71eee21959d1a1d!2sJodhpur%20Park%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728416934822!5m2!1sen!2sin"
+        }, {
+            "pandalid": "34",
+            "name": "Kabiraj Bagan Sarbojonin Durga Puja Pandal",
+            "location": "Kath Gola, Bagmari",
+            "description": "Visiting the Dakshieswar temple",
+            "region": "South Kolkata",
+            "baseimage": "kabiraj.JPG",
+            "latitude": "22.592733",
+            "longitude": "88.381891",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7367.270954602917!2d88.37931607943514!3d22.592733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027615e4802c37%3A0xd0536d3b2e158938!2sKabiraj%20Bagan%20Sarbojonin%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728416941188!5m2!1sen!2sin"
+        }, {
+            "pandalid": "35",
+            "name": "Kashi Bose Lane Durga Puja pandal",
+            "location": "Kashi Bose Ln, Manicktala, Darjipara",
+            "description": "Sati Pratha",
+            "region": "Central Kolkata",
+            "baseimage": "kashibose.JPG",
+            "latitude": "22.5908979",
+            "longitude": "88.3689174",
+            "top": "1",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7367.3691375923!2d88.36634247943518!3d22.590897899999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027636f4aba21b%3A0xd56a6b40b1520547!2sKashi%20Bose%20Lane%20Durga%20Puja%20pandal!5e0!3m2!1sen!2sin!4v1728416953474!5m2!1sen!2sin"
+        }, {
+            "pandalid": "36",
+            "name": "Kumartuli Park Sarbojanin Durga Puja Pandal",
+            "location": "Sovabazar, Kumartuli",
+            "description": "All India Radio office",
+            "region": "Central Kolkata",
+            "baseimage": "kumartuli.PNG",
+            "latitude": "22.5989827",
+            "longitude": "88.3614662999999",
+            "top": "1",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7366.936521453638!2d88.35889137943516!3d22.5989827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277cd636f29f3%3A0x76a486a0b70b04b7!2sKumartuli%20Park%20Sarbojanin%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728416968440!5m2!1sen!2sin"
+        }, {
+            "pandalid": "37",
+            "name": "Lalabagan Nabankur Durga Puja Pandal",
+            "location": " Simla Rd, Manicktala, Sahitya Parishad",
+            "description": "Made with 8000 live plants",
+            "region": "Central Kolkata",
+            "baseimage": "lalabagan.JPG",
+            "latitude": "22.5882461",
+            "longitude": "88.3773588",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7367.511002967584!2d88.37478387943517!3d22.588246100000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02763f5492eb01%3A0x44467c871f082871!2sLalabagan%20Nabankur%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728416960763!5m2!1sen!2sin"
+        }, {
+            "pandalid": "38",
+            "name": "Maddox Square Durga Puja Pandal",
+            "location": "Garcha, Ballygunge",
+            "description": "Traditional and artistic celebrations",
+            "region": "South Kolkata",
+            "baseimage": "maddox.JPG",
+            "latitude": "22.5265634",
+            "longitude": "88.3546477",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7370.8064359673335!2d88.35207277943518!3d22.5265634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02772554053a63%3A0x257b3f0f56afec64!2sMaddox%20Square%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728417339582!5m2!1sen!2sin"
+        }, {
+            "pandalid": "39",
+            "name": "Maniktala Chaltabagan Lohapatty Durga Puja Pandal",
+            "location": "Vivekananda Rd, Manicktala",
+            "description": "Artisan Celebration",
+            "region": "Central Kolkata",
+            "baseimage": "chaltabagan.JPG",
+            "latitude": "22.5848905",
+            "longitude": "88.3721509",
+            "top": "1",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7367.690497449879!2d88.36957597943517!3d22.584890500000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02779e94bb4087%3A0x66e73dad2ff4e1b0!2sManiktala%20Chaltabagan%20Lohapatty%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728417352416!5m2!1sen!2sin"
+        }, {
+            "pandalid": "40",
+            "name": "Mudiali Club Durga Puja Pandal",
+            "location": "SR Das Rd, Mudiali, Kalighat",
+            "description": "Triad of Brahma, Vishnu, and Maheshwar",
+            "region": "South Kolkata",
+            "baseimage": "mudiali.JPG",
+            "latitude": "22.5101939999999",
+            "longitude": "88.3463122",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7371.679546185375!2d88.34373727943516!3d22.510193999999988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0270cbdf5173cd%3A0x5518c1c09c9335f0!2sMudiali%20Club%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728417368585!5m2!1sen!2sin"
+        }, {
+            "pandalid": "41",
+            "name": "Muhammad Ali Park",
+            "location": "Chittaranjan Ave, Calcutta University, College Square",
+            "description": "The White House",
+            "region": "Central Kolkata",
+            "baseimage": "mdali.JPG",
+            "latitude": "22.5771888",
+            "longitude": "88.3607368999999",
+            "top": "1",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7368.102373709927!2d88.35816197943517!3d22.577188800000016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277b28cce4d49%3A0x64c1f82caceb3609!2sMuhammad%20Ali%20Park!5e0!3m2!1sen!2sin!4v1728417377314!5m2!1sen!2sin"
+        }, {
+            "pandalid": "42",
+            "name": "Naktala Udayan Sangha Durga Puja Pandal",
+            "location": "Naktala, Garia",
+            "description": "Ekannoborti, symbolising unity in diversity",
+            "region": "South Kolkata",
+            "baseimage": "naktala.PNG",
+            "latitude": "22.4742928999999",
+            "longitude": "88.3665898",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7373.592330160945!2d88.36401487943519!3d22.474292899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027107aa5b8751%3A0x9999c634b4271a8f!2sNaktala%20Udayan%20Sangha%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728417385338!5m2!1sen!2sin"
+        }, {
+            "pandalid": "43",
+            "name": "New Town Durga Puja Committee",
+            "location": "Action Area 1B, Newtown",
+            "description": "Mrrichhakatika - An Ode to a Timeless Classic",
+            "region": "Salt Lake\/New Town",
+            "baseimage": "newtown.PNG",
+            "latitude": "22.5822737",
+            "longitude": "88.458849",
+            "top": "1",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7367.830455225383!2d88.45627407943518!3d22.5822737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027575aec8b953%3A0xdb011e2e8a3f6b40!2sNew%20Town%20Durga%20Puja%20Committee%2C%20BD%20Block!5e0!3m2!1sen!2sin!4v1728417392994!5m2!1sen!2sin"
+        }, {
+            "pandalid": "45",
+            "name": "Rajdanga Naba Uday Sangha",
+            "location": "Rajdanga Chakraborty Para, Sector A, East Kolkata Twp",
+            "description": "Good and Bad of Modernization",
+            "region": "South Kolkata",
+            "baseimage": "raj.JPG",
+            "latitude": "22.5166272",
+            "longitude": "88.3902284999999",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7371.336484258895!2d88.38765357943517!3d22.516627200000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0276b2b3107ed9%3A0xd35ddc049a639f57!2sRajdanga%20Naba%20Uday%20Sangha!5e0!3m2!1sen!2sin!4v1728417408384!5m2!1sen!2sin"
+        }, {
+            "pandalid": "46",
+            "name": "Samaj Sebi Sangha Durga Puja Pandal",
+            "location": "Lake View Rd, Hemanta Mukherjee Sarani, lake Terrace, Ballygunge",
+            "description": "Karshan - Farming",
+            "region": "South Kolkata",
+            "baseimage": "samaj.JPG",
+            "latitude": "22.5155611",
+            "longitude": "88.3562724",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7371.393342377364!2d88.35369747943514!3d22.515561100000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0270d322d57e03%3A0xfad4d78a9e3e88f9!2sSamaj%20Sebi%20Sangha%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728417415645!5m2!1sen!2sin"
+        }, {
+            "pandalid": "47",
+            "name": "Santosh Mitra Square Durga Puja Pandal",
+            "location": "Natabar Dutta Row, Lebutala, Bowbazar",
+            "description": "Sphere Las Vegas",
+            "region": "Central Kolkata",
+            "baseimage": "santoshmitra.PNG",
+            "latitude": "22.5660201",
+            "longitude": "88.3656532",
+            "top": "1",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7368.699423813147!2d88.36307827943517!3d22.566020099999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027655a41c9633%3A0xd230742cc8f8580b!2sSantosh%20Mitra%20Square%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728417426256!5m2!1sen!2sin"
+        }, {
+            "pandalid": "49",
+            "name": "Singhi Park Sarbojanin Durga Puja Pandal",
+            "location": "Dover Ln, Dover Terrace, Ballygunge",
+            "description": " Satmahla zamindar house",
+            "region": "South Kolkata",
+            "baseimage": "singhi.JPG",
+            "latitude": "22.5208433",
+            "longitude": "88.3631451999999",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7371.111602757107!2d88.36057027943517!3d22.520843299999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0276d5f6fa97af%3A0x310ce7fdfb83ca22!2sSinghi%20Park%20Sarbojanin%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728417444407!5m2!1sen!2sin"
+        }, {
+            "pandalid": "50",
+            "name": "Suruchi Sangha Durga Puja Pandal",
+            "location": "Block M, New Alipore",
+            "description": "Purano Sei Diner Kotha",
+            "region": "South Kolkata",
+            "baseimage": "suruchisangha.PNG",
+            "latitude": "22.5090531",
+            "longitude": "88.333942",
+            "top": "1",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7371.7403770217525!2d88.33136707943517!3d22.509053099999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027112d9c0466f%3A0x21832239a8285502!2sSuruchi%20Sangha%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728417464544!5m2!1sen!2sin"
+        }, {
+            "pandalid": "51",
+            "name": "Telengabagan Sarbojanin Durgapuja",
+            "location": "Telenga Bagan, Ultadanga",
+            "description": "Preventing food wastage",
+            "region": "Central Kolkata",
+            "baseimage": "telangabagan.JPG",
+            "latitude": "22.5949468",
+            "longitude": "88.3853031",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7367.1525000450665!2d88.38272817943519!3d22.594946800000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277004ffa704d%3A0xb73197db26bf20c!2sTelengabagan%20Sarbojanin%20Durgapuja!5e0!3m2!1sen!2sin!4v1728417471122!5m2!1sen!2sin"
+        }, {
+            "pandalid": "52",
+            "name": "The Ghasbagan Sporting Club",
+            "location": "Ghose Bagan, Mali Panchghara, Howrah",
+            "description": "Lal mati  tera-kota",
+            "region": "Central Kolkata",
+            "baseimage": "ghasbagan.JPG",
+            "latitude": "22.5920588",
+            "longitude": "88.3435404",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7367.307027069331!2d88.34096547943517!3d22.592058800000007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277c1e08f02dd%3A0x3eea66955cacde61!2sThe%20Ghasbagan%20Sporting%20Club!5e0!3m2!1sen!2sin!4v1728417486430!5m2!1sen!2sin"
+        }, {
+            "pandalid": "53",
+            "name": "Vidyasagar Park College Square Durga Puja Pandal",
+            "location": "College St, College Square",
+            "description": "Vatican theme",
+            "region": "Central Kolkata",
+            "baseimage": "collegesquare.PNG",
+            "latitude": "22.5745279",
+            "longitude": "88.3644724",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d7368.244644016639!2d88.36189747943517!3d22.5745279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277f855b8772d%3A0xebfd1e10c9feb763!2sVidyasagar%20Park%20College%20Square%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728417493555!5m2!1sen!2sin"
+        }, {
+            "pandalid": "55",
+            "name": "AK Block Durga Puja",
+            "location": "AK Block, Sector 2, Salt Lake",
+            "description": "Sound of water droplets",
+            "region": "Salt Lake\/New Town",
+            "baseimage": "ak.JPG",
+            "latitude": "",
+            "longitude": "",
+            "top": "0",
+            "url": "https:\/\/www.google.com\/maps\/embed?pb=!1m18!1m12!1m3!1d3683.7398692485503!2d88.42838677567518!3d22.58883053237445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a027500059d84b7%3A0x9c0fba0d38a18a72!2sAK%20Block%20Durga%20Puja%20Pandal!5e0!3m2!1sen!2sin!4v1728421413317!5m2!1sen!2sin"
+        }];
+        var posts = [];
+        var comments = [{
+            "commentid": "16",
+            "postid": "20",
+            "commenttext": "Wow",
+            "userid": "595",
+            "name": "Avinash Chourasia"
+        }, {
+            "commentid": "15",
+            "postid": "15",
+            "commenttext": "Hsjjs",
+            "userid": "376",
+            "name": "Rohit Agarwal"
+        }, {
+            "commentid": "13",
+            "postid": "17",
+            "commenttext": "Gshs",
+            "userid": "376",
+            "name": "Rohit Agarwal"
+        }, {
+            "commentid": "12",
+            "postid": "18",
+            "commenttext": "hello",
+            "userid": "396",
+            "name": "Sanskar Jalan"
+        }, {
+            "commentid": "11",
+            "postid": "15",
+            "commenttext": "Waah",
+            "userid": "376",
+            "name": "Rohit Agarwal"
+        }, {
+            "commentid": "9",
+            "postid": "8",
+            "commenttext": "cjh",
+            "userid": "633",
+            "name": "Rishik Sahu"
+        }, {
+            "commentid": "7",
+            "postid": "8",
+            "commenttext": "awesome",
+            "userid": "595",
+            "name": "Avinash Chourasia"
+        }, {
+            "commentid": "5",
+            "postid": "10",
+            "commenttext": "GOOD",
+            "userid": "595",
+            "name": "Avinash Chourasia"
+        }, {
+            "commentid": "4",
+            "postid": "7",
+            "commenttext": "awesome",
+            "userid": "595",
+            "name": "Avinash Chourasia"
+        }, {
+            "commentid": "3",
+            "postid": "9",
+            "commenttext": "good",
+            "userid": "595",
+            "name": "Avinash Chourasia"
+        }, {
+            "commentid": "2",
+            "postid": "3",
+            "commenttext": "sd fd",
+            "userid": "376",
+            "name": "Rohit Agarwal"
+        }, {
+            "commentid": "1",
+            "postid": "1",
+            "commenttext": "maja aya",
+            "userid": "376",
+            "name": "Rohit Agarwal"
+        }];
+        var likes = [];
+        var userId = "376";
+        // Initialize the carousel visibility
+        document.querySelectorAll('.carousel').forEach(carousel => {
+            const items = Array.from(carousel.querySelector('.carousel-inner').children);
+            const prevButton = carousel.querySelector('.carousel-prev');
+            const nextButton = carousel.querySelector('.carousel-next');
+
+            // Show/Hide prev and next buttons based on the initial position
+            prevButton.style.display = items.length > 1 ? 'none' : 'none'; // No prev on the first image
+            nextButton.style.display = items.length > 1 ? 'block' : 'none'; // Show next only if there's more than 1 image
+        });
+
+        async function fetchData(url) {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return await response.json();
+        }
+
+        function handleImageError(imgElement, img, pandalName, index) {
+            // If the current source is "pandalimg/", fallback to "img/"
+            if (imgElement.src.includes('pandalimg/')) {
+                imgElement.src = `img/${img}`; // Fallback to the second path
+            } else {
+                // If both paths fail, set a placeholder or default image
+                // imgElement.src = 'default.jpg'; // Optional: Default placeholder image
+                imgElement.alt = `${pandalName} - Image not available`; // Update alt text if needed
+            }
+        }
+
+        async function displayPandals() {
+            // console.log(pandals);
+            const pandalList = document.getElementById('pandal-list');
+            //     const posts = await fetchData(`https://insight.futuresfirst.com/puja2024/api.php?request=getallposts`);
+            for (const pandal of pandals) {
+                const pandalCard = document.createElement('div');
+                pandalCard.className = 'pandal-card visible';
+                pandalCard.dataset.name = pandal.name.toLowerCase();
+                pandalCard.dataset.region = pandal.region.toLowerCase();
+                pandalCard.dataset.top = pandal.top.toLowerCase();
+
+
+                const requiredPosts = posts.filter(post => post.pandalid == pandal.pandalid);
+                const allImages = [pandal.baseimage, ...requiredPosts.map(post => post.imageurl)];
+                // console.log(allImages);
+
+                pandalCard.innerHTML = `
+                    <div class="carousel">
+                        <div class="carousel-inner">
+                            ${allImages.map((img, index) => `
+                            <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                                <img 
+                                    src="${index === 0 ? `pandalimg/${img}` : `img/${img}`}" 
+                                    alt="${pandal.name} - Image ${index + 1}"
+                                />
+                                <div class="carousel-caption">
+                                    ${index === 0 ? '' : requiredPosts[index - 1].title || 'No Title'}
+                                </div>
+                            </div>
+                            `).join('')}
+                        </div>
+                        <button class="carousel-nav carousel-prev" onclick="moveCarousel(this.parentElement, -1)">&lt;</button>
+                        <button class="carousel-nav carousel-next" onclick="moveCarousel(this.parentElement, 1)">&gt;</button>
+                    </div>
+                    <div class="pandal-content">
+                        <h2 class="pandal-name">${pandal.name}</h2>
+                        <p class="pandal-location"><strong>Location:</strong> ${pandal.location}</p>
+                        <p class="pandal-region"><strong>Region:</strong> ${pandal.region}</p>
+                        <p class="pandal-description"><strong>Theme:</strong> ${pandal.description}</p>
+                    </div>
+                    <div class="pandal-footer">
+                        <span onclick="openPopup('${pandal.url}')" title="View on Map" style="    color: #d32f2f;    font-weight: 600;    font-family: sans-serif;"> <i class="fas fa-map-marker-alt"></i> View on Map</span>
+                        <button class="add-photo-btn" onclick="toggleUploadForm(${pandal.pandalid})">
+                            <span class="material-icons">add_a_photo</span>
+                            Add Photo
+                        </button>
+                    </div>
+                    <div class="upload-form" id="upload-form-${pandal.pandalid}" style="display:none">
+                        <div class="input-group">
+                            <input class="form-control" name="title" id="title-${pandal.pandalid}" type="text"
+                            placeholder="Enter a title for your submission!">
+                        </div>
+                        <div class="input-group">
+                            <input class="form-control" name="mypic" id="mypic-${pandal.pandalid}" type="file">
+                            <span class="input-group-append">
+                                <button id="addbtn-${pandal.pandalid}" type="button" class="btn btn-info btn-flat"
+                                onclick="uploadMyPic(${pandal.pandalid})">Upload</button>
+                            </span>
+                        </div>
+                    </div>`;
+                pandalList.appendChild(pandalCard);
+
+            }
+        }
+
+        function uploadMyPic(pandalid) {
+            var title = psafe(document.getElementById(`title-${pandalid}`).value);
+
+            if (title == "") {
+                alert("Title is mandatory to upload your entry");
+                return;
+            }
+            var file_data = $(`#mypic-${pandalid}`).prop('files')[0];
+            if (file_data == undefined) {
+                alert("No Photo Uploaded");
+                return;
+            }
+            console.log(file_data);
+            const form_data = new FormData();
+            form_data.append('file', file_data);
+            $.ajax({
+                url: 'upload.php?pandalid=' + pandalid + '&title=' + title,
+                dataType: 'text',
+                cache: false,
+                contentType: false,
+                processData: false,
+                data: form_data,
+                type: 'post',
+                success: function(php_script_response) {
+                    if (php_script_response.trim() != "FAILURE") {
+                        alert("uploaded");
+                        // Optionally, refresh the pandal card or add the new image to the carousel
+                        toggleUploadForm(pandalid); // Hide the form after successful upload
+                        displayFeed();
+                    } else {
+                        alert("Unable to process record at this time!");
+                        console.log('FAILURE');
+                    }
+                }
+            });
+        }
+
+        function moveCarousel(carousel, direction) {
+            const inner = carousel.querySelector('.carousel-inner');
+            const items = Array.from(inner.children);
+            const currentIndex = items.findIndex(item => item.classList.contains('active'));
+
+            // Calculate new index (with wrap-around logic)
+            let newIndex = currentIndex + direction;
+
+            // Hide prev button if we're at the first item
+            const prevButton = carousel.querySelector('.carousel-prev');
+            const nextButton = carousel.querySelector('.carousel-next');
+
+            // Adjust the new index and handle wrap-around logic
+            if (newIndex < 0) {
+                newIndex = 0;
+            } else if (newIndex >= items.length) {
+                newIndex = items.length - 1;
+            }
+
+            // Toggle visibility of prev and next buttons
+            prevButton.style.display = newIndex === 0 ? 'none' : 'block';
+            nextButton.style.display = newIndex === items.length - 1 ? 'none' : 'block';
+
+            // Update active class
+            items[currentIndex].classList.remove('active');
+            items[newIndex].classList.add('active');
+
+            // Move carousel-inner (shifting slides)
+            inner.style.transform = `translateX(-${newIndex * 100}%)`;
+        }
+
+
+        async function toggleLike(postId) {
+            try {
+                const response = await fetchData(`https://insight.futuresfirst.com/puja2024/api.php?request=insertuserlike&postid=${postId}?`);
+                await updateLikeCount(postId);
+            } catch (error) {
+                console.error('Error toggling like:', error);
+            }
+        }
+
+        async function updateLikeCount(postId) {
+            try {
+                const likeCount = await fetchData(`https://insight.futuresfirst.com/puja2024/api.php?request=getpostlikes`);
+                const likeButton = document.querySelector(`.like-button[onclick="toggleLike(${postId})"]`);
+                likeButton.querySelector('.like-count').textContent = likeCount;
+            } catch (error) {
+                console.error('Error updating like count:', error);
+            }
+        }
+
+        async function toggleComments(postId) {
+            const commentsSection = document.getElementById(`comments-${postId}`);
+            commentsSection.style.display = commentsSection.style.display === 'none' ? 'block' : 'none';
+
+            if (commentsSection.style.display === 'block') {
+                await loadComments(postId);
+            }
+        }
+
+        async function loadComments(postId) {
+            try {
+                const comments = await fetchData(`https://your-api-url.com/comments?postId=${postId}`);
+                const commentsSection = document.getElementById(`comments-${postId}`);
+                commentsSection.innerHTML = comments.map(comment => `
+                    <div class="comment">
+                        <strong>${comment.username}</strong>: ${comment.comment}
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading comments:', error);
+            }
+        }
+
+        function showView(viewId) {
+            document.getElementById('home-container').style.display = viewId === 'home-container' ? 'block' : 'none';
+            document.getElementById('pandal-list').style.display = viewId === 'pandal-list' ? 'block' : 'none';
+            document.getElementById('feed-container').style.display = viewId === 'feed-container' ? 'block' : 'none';
+            document.getElementById('tip-container').style.display = viewId === 'tip-container' ? 'block' : 'none';
+
+            document.querySelectorAll('.nav-button').forEach(btn => {
+                btn.classList.toggle('active', btn.onclick.toString().includes(viewId));
+            });
+        }
+
+        function filterPandals() {
+            const searchTerm = document.getElementById('pandal-search').value.toLowerCase();
+            const selectedRegion = document.getElementById('region-select').value.toLowerCase();
+
+            const pandalCards = document.querySelectorAll('.pandal-card');
+
+            pandalCards.forEach(card => {
+                const name = card.dataset.name.toLowerCase();
+                const region = card.dataset.region.toLowerCase();
+                const isTop = card.dataset.top == 1; // Check if the pandal is marked as top
+                // console.log(selectedRegion, isTop);
+
+                const nameMatch = name.includes(searchTerm);
+                const regionMatch = selectedRegion === 'all' || region === selectedRegion;
+                const topMatch = selectedRegion === 'top' && isTop; // Check if the region is 'top' and card is top
+                // console.log(topMatch);
+                // Adjust logic to show only top cards if 'top' is selected
+                if ((nameMatch && regionMatch) || topMatch) {
+                    card.classList.add('visible');
+                } else {
+                    card.classList.remove('visible');
+                }
+            });
+        }
+
+
+        function toggleUploadForm(pandalId) {
+            const form = document.getElementById(`upload-form-${pandalId}`);
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function psafe(str) {
+            return str.replaceAll("#", "%23").replaceAll("&", "%26").replaceAll(`"`, `'`);
+        }
+
+        async function displayFeed() {
+            // Get posts and comments from PHP
+            posts = await fetchData(`https://insight.futuresfirst.com/puja2024/api.php?request=getallposts`);
+            comments = await fetchData(`https://insight.futuresfirst.com/puja2024/api.php?request=getpostcomments`);
+
+            const feedContainer = document.getElementById('feed-container');
+            feedContainer.innerHTML = ''; // Clear existing content
+
+            for (const post of posts) {
+                const feedCard = document.createElement('div');
+                feedCard.className = 'feed-item';
+                feedCard.innerHTML = `
+            <div class="feed-item-header">
+                <div class="post-name">${post.name}</div>
+                ${post.userid === userId ? `<button class="delete-post" onclick="deletePost(${post.postid})">⋮</button>` : ''}
+            </div>
+            <img src="img/${post.imageurl}" alt="${post.title}" class="feed-image">
+            <h4 class="post-title">${post.title}</h4>
+            <div class="feed-item-actions">
+                <button class="like-button" onclick="toggleLike(${post.postid}, ${Number(post.userlikes)})">
+                    <span class="material-icons ${post.userlikes ? 'icon-favorite' : 'icon-favorite-border'}">${Number(post.userlikes) ? 'favorite' : 'favorite_border'}</span>
+                    <span class="like-count" style="color: red;">${post.likes}</span>
+                </button>
+                <button class="comment-button" onclick="toggleComments(${post.postid})" style="color: gold;">
+                    <span class="material-icons">comment</span>
+                    <span class="comment-count">${post.comments.length}</span>
+                </button>
+            </div>
+            <div class="comment-section" id="comments-${post.postid}" style="display: none;">
+                <div class="add-comment">
+                    <input type="text" id="comment-input-${post.postid}" placeholder="Add a comment...">
+                    <button onclick="addComment(${post.postid})">Post</button>
+                </div>
+                ${comments
+                    .filter(comment => comment.postid === post.postid)
+                    .map(comment => `
+                        <div class="comment">
+                            <div class="comment-text">${comment.commenttext}</div>
+                            ${comment.userid === userId ? `<button class="delete-comment" onclick="deleteComment(${comment.commentid})">⋮</button>` : ''}
+                        </div>
+                    `).join('')}
+            </div>`;
+                feedContainer.appendChild(feedCard);
+            }
+        }
+
+        function toggleComments(postId) {
+            const commentsSection = document.getElementById(`comments-${postId}`);
+            commentsSection.style.display = commentsSection.style.display === 'none' ? 'block' : 'none';
+        }
+
+        async function deletePost(postId) {
+            if (confirm("Are you sure you want to delete this post?")) {
+                try {
+                    const response = await fetch(`https://insight.futuresfirst.com/puja2024/api.php?request=deletepost&postid=${postId}`);
+                    if (response.ok) {
+                        await displayFeed(); // Reload the feed to reflect changes
+                    } else {
+                        alert("Error deleting post");
+                    }
+                } catch (error) {
+                    console.error('Error deleting post:', error);
+                }
+            }
+        }
+
+        async function deleteComment(commentId) {
+            if (confirm("Are you sure you want to delete this comment?")) {
+                try {
+                    const response = await fetch(`https://insight.futuresfirst.com/puja2024/api.php?request=deletecomment&commentid=${commentId}`);
+                    if (response.ok) {
+                        await displayFeed(); // Reload feed to reflect new comment and like counts
+                    } else {
+                        alert("Error deleting comment");
+                    }
+                } catch (error) {
+                    console.error('Error deleting comment:', error);
+                }
+            }
+        }
+
+        async function toggleLike(postId, liketype) {
+            try {
+                if (liketype == 0) {
+                    const response = await fetch(`https://insight.futuresfirst.com/puja2024/api.php?request=insertuserlike&postid=${postId}`);
+                    if (response.ok) {
+                        await displayFeed(); // Reload the feed to reflect changes
+                    }
+                } else {
+                    const response = await fetch(`https://insight.futuresfirst.com/puja2024/api.php?request=deleteuserlike&postid=${postId}`);
+                    if (response.ok) {
+                        await displayFeed(); // Reload the feed to reflect changes
+                    }
+                }
+            } catch (error) {
+                console.error('Error toggling like:', error);
+            }
+        }
+
+        async function addComment(postId) {
+            const commentInput = document.getElementById(`comment-input-${postId}`);
+            const commentText = commentInput.value.trim();
+            if (commentText) {
+                try {
+                    const response = await fetch(`https://insight.futuresfirst.com/puja2024/api.php?request=addpostcomment&postid=${postId}&commenttext=${commentText}`);
+                    if (response.ok) {
+                        commentInput.value = '';
+                        await displayFeed(); // Reload feed to reflect new comment and like counts
+                    }
+                } catch (error) {
+                    console.error('Error adding comment:', error);
+                }
+            }
+        }
+
+        function openPopup(url) {
+            const popup = document.getElementById('popup');
+            const iframe = document.getElementById('map-iframe');
+            iframe.src = url;
+            popup.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onload = function() {
+            // initMap();
+            displayPandals();
+            // displayFeed();
+        };
+    </script>
+</body>
+
+</html>
